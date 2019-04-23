@@ -21,18 +21,19 @@ function setup() {
     createCanvas(400, 600);
     //frameRate(50);
   
-    //roadMarkings = new roadMarking();
+    roadMarkings = new roadMarking();
     obstacles.push(new Obstacle());
     player = new Player();
+    console.log(roadMarkings);
 }
 
 function draw() {
     background("white");
-        
-    //roadMarkings[i].update();
-    //roadMarkings[i].offscreen();
-    //roadMarkings[i].show();
-    
+       
+    roadMarkings.update();
+    roadMarkings.offscreen();
+    roadMarkings.show();
+   
     // New obstacles appear after certain number of frames
     if (frameCount % 130 === 0) {
         obstacles.push(new Obstacle());
@@ -65,7 +66,8 @@ function draw() {
 
     // Show the player
     player.show();
-
+    
+    
     // Game controls
     if (keyIsDown(LEFT_ARROW)) {
         player.turnLeft();
