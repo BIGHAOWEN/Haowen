@@ -31,6 +31,7 @@ class roadMarking
     {
         push();
         strokeWeight(3);
+        stroke(0);
         fill("yellow");
         rect(this.x, this.y, this.w, this.h);
         console.log(this.y);
